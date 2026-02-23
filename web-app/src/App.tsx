@@ -5,6 +5,7 @@ import UploadBox from './components/UploadBox';
 import PredictButton from './components/PredictButton';
 import ResultCard from './components/ResultCard';
 import ErrorDisplay from './components/ErrorDisplay';
+import TabNavigation from './components/TabNavigation';
 import { useCarPrediction } from './hooks/useCarPrediction';
 
 const App: React.FC = () => {
@@ -15,7 +16,9 @@ const App: React.FC = () => {
     loading, 
     error, 
     handleFileChange, 
-    handlePredict 
+    handlePredict,
+    switchTab,
+    activeTab
   } = useCarPrediction();
 
   return (
@@ -23,18 +26,20 @@ const App: React.FC = () => {
       <div className="max-w-2xl w-full bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-3xl shadow-2xl">
         
         <Header />
-
+         {/* Pasang Komponen Tab di sini */}
+        <TabNavigation activeTab={activeTab} onTabChange={switchTab} />
         <main className="space-y-6">
           <UploadBox onFileChange={handleFileChange} preview={preview} />
           
           <PredictButton 
             onClick={handlePredict} 
             disabled={!file || loading} 
-            loading={loading} 
+            loading={loading}
+            label={activeTab === 'identity' ? 'Identifikasi Mobil' : 'Deteksi Kerusakan'} 
           />
 
           {result && (
-            <ResultCard carType={result.car_type} confidence={result.confidence} />
+            <ResultCard activeTab={activeTab} data={result} />
           )}
 
           {error && <ErrorDisplay message={error} />}

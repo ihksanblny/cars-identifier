@@ -3,7 +3,8 @@ import { useState, type ChangeEvent } from 'react';
 import axios from 'axios';
 
 interface PredictionResult {
-  car_type: string;
+  name : string;
+  status : string;
   confidence: number;
 }
 
@@ -13,7 +14,8 @@ export const useCarPrediction = () => {
   const [result, setResult] = useState<PredictionResult | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-
+  const [activeTab, setActiveTab] = useState<'identity' | 'damage'>('identity');
+  
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
@@ -28,12 +30,12 @@ export const useCarPrediction = () => {
     if (!file) return;
     setLoading(true);
     setError(null);
-
     const formData = new FormData();
     formData.append('file', file);
-
     try {
-      const response = await axios.post<PredictionResult>('http://localhost:8000/predict', formData);
+      // Panggil endpoint berdasarkan tab yang aktif
+      const endpoint = activeTab === 'identity' ? 'predict_identity' : 'predict_damage';
+      const response = await axios.post<PredictionResult>(`http://localhost:8000/${endpoint}`, formData);
       setResult(response.data);
     } catch (err) {
       setError("Server Backend mati. Tolong nyalakan api.py!");
@@ -43,13 +45,13 @@ export const useCarPrediction = () => {
     }
   };
 
+  const switchTab = (tab: 'identity' | 'damage') => {
+    setActiveTab(tab);
+    setResult(null); // Reset hasil saat pindah tab
+  };
+
   return {
-    file,
-    preview,
-    result,
-    loading,
-    error,
-    handleFileChange,
-    handlePredict
+    file, preview, result, loading, error, activeTab,
+    handleFileChange, handlePredict, switchTab
   };
 };
