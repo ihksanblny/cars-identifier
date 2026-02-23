@@ -54,6 +54,9 @@ Model saat ini mendukung identifikasi untuk 7 kategori mobil berikut:
 - **Epochs: 20.**
 - **Teknik: Data Augmentation (Random Flip, Rotation, Zoom) & Rescaling.**
 
+
+---
+
 ## 🚀 Cara Menjalankan Project
 
 ### 1. Prasyarat
