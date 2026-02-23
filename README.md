@@ -91,4 +91,6 @@ npm install
 npm run dev
 ```
 
-## Using Datase from Kaggle : https://www.kaggle.com/datasets/kshitij192/cars-image-dataset?resource=download
+## Using Datase from Kaggle : 
+- https://www.kaggle.com/datasets/kshitij192/cars-image-dataset?resource=download
+- https://www.kaggle.com/datasets/prajwalbhamere/car-damage-severity-dataset
