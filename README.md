@@ -48,6 +48,12 @@ Model saat ini mendukung identifikasi untuk 7 kategori mobil berikut:
 
 ---
 
+## 🧠 Detail Model AI
+**Model Dasar: MobileNetV2 (Pre-trained on ImageNet).**
+**Optimizer: Adam (Learning Rate: 0.0001).**
+**Epochs: 20.**
+**Teknik: Data Augmentation (Random Flip, Rotation, Zoom) & Rescaling.**
+
 ## 🚀 Cara Menjalankan Project
 
 ### 1. Prasyarat
