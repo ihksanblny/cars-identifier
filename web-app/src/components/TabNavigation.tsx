@@ -7,22 +7,22 @@ interface TabNavigationProps {
 
 const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange }) => {
   return (
-    <div className="flex p-1 bg-slate-800/50 rounded-xl mb-6 border border-white/5">
+    <div className="flex p-1.5 bg-slate-900/80 rounded-2xl border border-white/5 shadow-inner">
       <button 
         onClick={() => onTabChange('identity')}
-        className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${
-          activeTab === 'identity' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'
+        className={`flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 ${
+          activeTab === 'identity' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:bg-white/5'
         }`}
       >
-        Car Identifier
+        IDENTIFICATION
       </button>
       <button 
         onClick={() => onTabChange('damage')}
-        className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${
-          activeTab === 'damage' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'
+        className={`flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 ${
+          activeTab === 'damage' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:bg-white/5'
         }`}
       >
-        Damage Scanner
+        SCAN DAMAGE
       </button>
     </div>
   );
