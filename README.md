@@ -53,6 +53,8 @@ Model saat ini mendukung identifikasi untuk 7 kategori mobil berikut:
 - **Optimizer: Adam (Learning Rate: 0.0001).**
 - **Epochs: 20.**
 - **Teknik: Data Augmentation (Random Flip, Rotation, Zoom) & Rescaling.**
+- **Model Identitas: Meliputi Audi, Hyundai Creta, Mahindra Scorpio, Rolls Royce, Swift, Tata Safari, dan Toyota Innova.**
+- **Model Kerusakan: Dilatih untuk membedakan tekstur bodi normal vs penyok/lecet dengan feedback diagnostik.**
 
 
 ---
