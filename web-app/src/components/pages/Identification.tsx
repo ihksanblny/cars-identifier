@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import Hero from './Hero';
-import UploadBox from './UploadBox';
-import PredictButton from './PredictButton';
-import ResultCard from './ResultCard';
-import ErrorDisplay from './ErrorDisplay';
-import HistoryList from './HistoryList';
-import { useCarPrediction } from '../hooks/useCarPrediction';
+import Hero from '../layouts/Hero';
+import UploadBox from '../ui/UploadBox';
+import PredictButton from '../ui/PredictButton';
+import ResultCard from '../features/results/ResultCard';
+import ErrorDisplay from '../ui/ErrorDisplay';
+import HistoryList from '../features/history/HistoryList';
+import { useCarPrediction } from '../../hooks/useCarPrediction';
 
 const Identification: React.FC = () => {
   const { file, preview, result, loading, error, history, handleFileChange, handlePredict, switchTab, clearHistory } = useCarPrediction();

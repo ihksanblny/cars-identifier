@@ -1,6 +1,6 @@
 import React from 'react';
 import { History as HistoryIcon, Trash2, Clock } from 'lucide-react';
-import type { HistoryItem } from '../hooks/useCarPrediction';
+import type { HistoryItem } from '../../../hooks/useCarPrediction';
 
 interface HistoryListProps {
     history: HistoryItem[];

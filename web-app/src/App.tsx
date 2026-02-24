@@ -1,10 +1,10 @@
 // src/App.tsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Identification from './components/Identification';
-import Diagnostic from './components/Diagnostic';
+import Header from './components/layouts/Header';
+import Footer from './components/layouts/Footer';
+import Identification from './components/pages/Identification';
+import Diagnostic from './components/pages/Diagnostic';
 
 const App: React.FC = () => {
   return (

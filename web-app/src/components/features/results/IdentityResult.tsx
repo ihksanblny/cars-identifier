@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAR_METADATA } from '../constants/carData';
+import { CAR_METADATA } from '../../../constants/carData';
 import { Zap, Tag, Settings, Info } from 'lucide-react';
 
 interface IdentityResultProps {
